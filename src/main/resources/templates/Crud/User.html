@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>CRUD Application</title>
+</head>
+<body>
+<div align="center">
+    <h1>User Records</h1>
+    <a href="/New/new_User">Enter New Sale</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>lastname</th>
+                <th>surname</th>
+                <th>email</th>
+				<th>role</th>
+				<th>username</th>
+				<th>password</th>
+				<th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="User : ${listUser}">
+                <td th:text="${User.id}">id</td>
+                <td th:text="${User.name}">name</td>
+                <td th:text="${User.lastname}">lastname</td>
+				<td th:text="${User.surname}">surname</td>
+				<td th:text="${User.email}">email</td>
+				<td th:text="${User.role}">role</td>
+				<td th:text="${User.username}">username</td>
+				<td th:text="${User.password}">password</td>
+				<td th:text="${User.status}">status</td>
+                <td>
+                    <a th:href="@{'/Edit/edit_User/' + ${User.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete_User/' + ${User.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Edit Registro</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit Registro</h1>
+        <br />
+        <form action="#" th:action="@{/update_Registro}" th:object="${Registro}"
+            method="post">
+ 		
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>id:</td>
+                    <td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+                </tr>            
+                <tr>
+                    <td>status:</td>
+                    <td><input type="text" th:field="*{status}" /></td>
+                </tr>
+                <tr>
+                    <td>lugar:</td>
+                    <td><input type="text" th:field="*{lugar}" /></td>
+                </tr>    
+                <tr>
+                    <td>formato:</td>
+                    <td><input type="text" th:field="*{formato}" /></td>
+                </tr>        
+                <tr>
+                    <td>name:</td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                </tr>   
+                <tr>
+                    <td>organisador:</td>
+                    <td><input type="text" th:field="*{organisador}" /></td>
+                </tr> 
+                <tr>
+                    <td>hora:</td>
+                    <td><input type="text" th:field="*{hora}" /></td>
+                </tr> 
+                <tr>
+                    <td>inscritos:</td>
+                    <td><input type="text" th:field="*{inscritos}" /></td>
+                </tr> 
+                <tr>
+                    <td>fecha:</td>
+                    <td><input type="text" th:field="*{fecha}" /></td>
+                </tr>   
+                <tr>
+                    <td>baja:</td>
+                    <td><input type="text" th:field="*{baja}" /></td>
+                </tr>   
+                <tr>
+                    <td>categoria:</td>
+                    <td><input type="text" th:field="*{categoria}" /></td>
+                </tr>   
+                <tr>
+                    <td>owner:</td>
+                    <td><input type="text" th:field="*{owner}" /></td>
+                </tr>                        
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>

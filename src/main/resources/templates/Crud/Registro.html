@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>CRUD Application</title>
+</head>
+<body>
+<div align="center">
+    <h1>Registro Records</h1>
+    <a href="/New/new_Registro">Enter New Registro</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>status</th>
+                <th>lugar</th>
+                <th>formato</th>
+                <th>name</th>
+				<th>organisador</th>
+				<th>hora</th>
+				<th>inscritos</th>
+				<th>fecha</th>
+				<th>baja</th>
+				<th>categoria</th>
+				<th>owner</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="Registro : ${listRegistro}">
+                <td th:text="${Registro.id}">id</td>
+                <td th:text="${Registro.status}">status</td>
+                <td th:text="${Registro.lugar}">lugar</td>
+				<td th:text="${Registro.formato}">formato</td>
+				<td th:text="${Registro.name}">name</td>
+				<td th:text="${Registro.organisador}">organisador</td>
+				<td th:text="${Registro.hora}">hora</td>
+				<td th:text="${Registro.inscritos}">inscritos</td>
+				<td th:text="${Registro.fecha}">fecha</td>
+				<td th:text="${Registro.baja}">baja</td>
+				<td th:text="${Registro.categoria}">categoria</td>
+				<td th:text="${Registro.owner}">owner</td>
+                <td>
+                    <a th:href="@{'/Edit/edit_Registro/' + ${Registro.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete_Registro/' + ${Registro.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>
